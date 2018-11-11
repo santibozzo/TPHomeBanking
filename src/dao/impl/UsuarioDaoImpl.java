@@ -15,11 +15,12 @@ import java.util.List;
 public class UsuarioDaoImpl implements UsuarioDAO {
     @Override
     public void crearUsuario(Usuario unUsuario) throws DAOException {
-        String user = unUsuario.getUser();
+        String name = unUsuario.getName();
+        String user = unUsuario.getUsername();
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
 
-        String sql = "INSERT INTO usuarios (user, email, pass) VALUES ('" + user + "', '" + email + "', '" + pass + "')";
+        String sql = "INSERT INTO usuarios (name, user, email, pass) VALUES ('" + name + "', '" + user + "', '" + email + "', '" + pass + "')";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -43,7 +44,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public void borrarUsuario(Usuario u) {
-        String username = u.getUser();
+        String username = u.getUsername();
         String sql = "DELETE FROM usuarios WHERE user = '" + username + "'";
         Connection c = DBManager.connect();
         try {
@@ -68,11 +69,12 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public void modificarUsuario(Usuario unUsuario) {
-        String user = unUsuario.getUser();
+        String name = unUsuario.getName();
+        String user = unUsuario.getUsername();
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
 
-        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "' WHERE user = '" + user + "'";
+        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "', name = '" + name +"' WHERE user = '" + user + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -105,7 +107,8 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
             while (rs.next()) {
                 System.out.println("Usuario:");
-                System.out.print("\t" + rs.getString("user"));
+                System.out.print("\t" + rs.getString("name"));
+                System.out.print("\t" + rs.getString("username"));
                 System.out.print("\t" + rs.getString("email"));
                 System.out.print("\t" + rs.getString("pass"));
                 System.out.println();
@@ -139,7 +142,8 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             if (rs.next()) {
                 System.out.println("Usuario:");
                 System.out.print("\t" + rs.getInt("id"));
-                System.out.print("\t" + rs.getString("user"));
+                System.out.print("\t" + rs.getString("name"));
+                System.out.print("\t" + rs.getString("username"));
                 System.out.print("\t" + rs.getString("email"));
                 System.out.print("\t" + rs.getString("pass"));
                 System.out.println();

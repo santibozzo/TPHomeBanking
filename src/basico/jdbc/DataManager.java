@@ -1,44 +1,30 @@
 package basico.jdbc;
 
+
+import exceptions.ServicioException;
 import modelo.Usuario;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import service.UsuarioService;
 
 
 public class DataManager {
 
-    public void crearUsuario(Usuario unUsuario) {
-        String user = unUsuario.getUser();
-        String email = unUsuario.getEmail();
-        String pass = unUsuario.getPass();
+    private UsuarioService usuarioService = new UsuarioService();
 
-        Connection c = DBManager.connect();
+    public void crearUsuario(Usuario unUsuario) {
         try {
-            Statement s = c.createStatement();
-            String sql = "INSERT INTO usuarios (user, email, pass) VALUES ('" + user + "', '" + email + "', '" + pass + "')";
-            s.executeUpdate(sql);
-            c.commit();
-        } catch (SQLException e) {
-            try {
-                e.printStackTrace();
-                c.rollback();
-            } catch (SQLException e1) {
-                e.printStackTrace();
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+            usuarioService.crearUsuario(unUsuario);
+        }catch (ServicioException e){
+            e.printStackTrace();
         }
     }
 
     public void borraUsuario(String username) {
-        String sql = "DELETE FROM usuarios WHERE user = '" + username + "'";
+        String sql = "DELETE FROM usuarios WHERE username = '" + username + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -61,34 +47,12 @@ public class DataManager {
     }
 
     public void actualizaUsuario(Usuario unUsuario) {
-        String user = unUsuario.getUser();
-        String email = unUsuario.getEmail();
-        String pass = unUsuario.getPass();
-
-        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "' WHERE user = '" + user + "'";
-        Connection c = DBManager.connect();
-        try {
-            Statement s = c.createStatement();
-            s.executeUpdate(sql);
-            c.commit();
-        } catch (SQLException e) {
-            try {
-                c.rollback();
-                e.printStackTrace();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-        }
+            usuarioService.actualizarUsuario(unUsuario);
     }
 
     public void muestraUsuario(String username) {
-        String sql = "SELECT * FROM usuarios WHERE user = '" + username + "'";
+
+        String sql = "SELECT * FROM usuarios WHERE username = '" + username + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -97,7 +61,7 @@ public class DataManager {
             if (rs.next()) {
                 System.out.println("Usuario:");
                 System.out.print("\t" + rs.getInt("id"));
-                System.out.print("\t" + rs.getString("user"));
+                System.out.print("\t" + rs.getString("username"));
                 System.out.print("\t" + rs.getString("email"));
                 System.out.print("\t" + rs.getString("pass"));
                 System.out.println();
@@ -129,7 +93,7 @@ public class DataManager {
 
             while (rs.next()) {
                 System.out.println("Usuario:");
-                System.out.print("\t" + rs.getString("user"));
+                System.out.print("\t" + rs.getString("username"));
                 System.out.print("\t" + rs.getString("email"));
                 System.out.print("\t" + rs.getString("pass"));
                 System.out.println();

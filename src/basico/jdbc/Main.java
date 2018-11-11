@@ -8,26 +8,26 @@ public class Main {
 
 	public static void main(String [] args) throws SQLException {
 
-		TableManager tm = new TableManager();
-		tm.createUserTable();
+//		TableManager tm = new TableManager();
+//		tm.createUserTable();
 		
 		
 		DataManager dm = new DataManager();
 		
-		String user = "santi";
-		String email = "santi@mail.com";
-		String pass = "123456";
-		Usuario aInsertar = new Usuario();
-		aInsertar.setUser(user);
-		aInsertar.setEmail(email);
-		aInsertar.setPass(pass);
-		dm.crearUsuario(aInsertar);
-
-		Usuario aInsertar2 = new Usuario();
-		aInsertar2.setUser(user);
-		aInsertar2.setEmail(email);
-		aInsertar2.setPass(pass);
-		dm.crearUsuario(aInsertar2);
+//		String user = "santi";
+//		String email = "santi@mail.com";
+//		String pass = "123456";
+//		Usuario aInsertar = new Usuario();
+//		aInsertar.setUser(user);
+//		aInsertar.setEmail(email);
+//		aInsertar.setPass(pass);
+//		dm.crearUsuario(aInsertar);
+//
+//		Usuario aInsertar2 = new Usuario();
+//		aInsertar2.setUser(user);
+//		aInsertar2.setEmail(email);
+//		aInsertar2.setPass(pass);
+//		dm.crearUsuario(aInsertar2);
 		
 //		String userx = "userx";
 //		String emailx = "emailx";

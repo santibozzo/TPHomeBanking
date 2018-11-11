@@ -13,7 +13,7 @@ public class Main2 {
         String email = "email1";
         String pass = "pass1";
         Usuario aInsertar = new Usuario();
-        aInsertar.setUser(user);
+        aInsertar.setUsername(user);
         aInsertar.setEmail(email);
         aInsertar.setPass(pass);
 

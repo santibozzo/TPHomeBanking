@@ -4,26 +4,30 @@ package modelo;
  * Created by guido on 20/05/2016.
  */
 public class Usuario {
-    private String user;
+    private String name;
     private String email;
+    private String username;
     private String pass;
 
     public Usuario() {
     }
 
-    public Usuario(String user, String email, String pass) {
-        this.user = user;
+    public Usuario(String name, String username, String email, String pass) {
+        this.name = name;
+        this.username = username;
         this.pass = pass;
         this.email = email;
     }
 
-    public String getUser() {
-        return user;
+    public String getName() {return name;}
+
+    public void setName(String name) {this.name = name;}
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+    public void setUsername(String user) {this.username = user;}
 
     public String getEmail() {
         return email;
@@ -44,7 +48,8 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "user='" + user + '\'' +
+                "name='" + name + '\'' +
+                "user='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", pass='" + pass + '\'' +
                 '}';

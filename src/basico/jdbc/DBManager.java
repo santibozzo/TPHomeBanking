@@ -9,10 +9,9 @@ import java.sql.SQLException;
 
 public class DBManager {
 
-	private static final String DIR = "C:\\Users\\Shaca\\Documents\\UP\\Laboratorio I - Java\\viejo\\jdbc-h2\\h2\\base_de_datos";
 	private static final String DB_DRIVER = "org.h2.Driver";
-	private static final String DB_BASE_URL = "jdbc:h2:tcp://localhost//" + DIR;
-	private static final String DB_NAME = "/proyecto";
+	private static final String DB_BASE_URL = "jdbc:h2:tcp://localhost//";
+	private static final String DB_NAME = "uno";
 	private static final String DB_USERNAME = "sa";
 	private static final String DB_PASSWORD = "";
 
@@ -25,8 +24,7 @@ public class DBManager {
 			System.exit(0);
 		}
 		try {
-			String url = DB_BASE_URL + "\\uno";
-			//url = url.replace(DIR, obtenerUbicacionBase());
+			String url = DB_BASE_URL + obtenerUbicacionBase();
 			System.out.println(url);
 			c = DriverManager.getConnection(url, DB_USERNAME, DB_PASSWORD);
 			c.setAutoCommit(false);
@@ -39,7 +37,7 @@ public class DBManager {
 	}
 
 	private static String obtenerUbicacionBase() {
-		File currDir = new File("h2/base_de_datos/");
+		File currDir = new File("h2/base_de_datos/" + DB_NAME);
 		return currDir.getAbsolutePath();
 	}
 
