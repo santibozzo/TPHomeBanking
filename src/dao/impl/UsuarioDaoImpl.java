@@ -20,7 +20,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
 
-        String sql = "INSERT INTO usuarios (name, user, email, pass) VALUES ('" + name + "', '" + user + "', '" + email + "', '" + pass + "')";
+        String sql = "INSERT INTO usuarios (name, username, email, pass) VALUES ('" + name + "', '" + user + "', '" + email + "', '" + pass + "')";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -68,13 +68,13 @@ public class UsuarioDaoImpl implements UsuarioDAO {
     }
 
     @Override
-    public void modificarUsuario(Usuario unUsuario) {
+    public void modificarUsuario(Usuario unUsuario) throws DAOException{
         String name = unUsuario.getName();
         String user = unUsuario.getUsername();
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
 
-        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "', name = '" + name +"' WHERE user = '" + user + "'";
+        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "', name = '" + name +"' WHERE username = '" + user + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -85,7 +85,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
                 c.rollback();
                 e.printStackTrace();
             } catch (SQLException e1) {
-                //no hago nada
+                throw new DAOException(e);
             }
         } finally {
             try {
@@ -107,10 +107,9 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
             while (rs.next()) {
                 System.out.println("Usuario:");
-                System.out.print("\t" + rs.getString("name"));
-                System.out.print("\t" + rs.getString("username"));
+                System.out.print("\t" + rs.getInt("id"));
+                System.out.print("\t" + rs.getString("user"));
                 System.out.print("\t" + rs.getString("email"));
-                System.out.print("\t" + rs.getString("pass"));
                 System.out.println();
 
             }

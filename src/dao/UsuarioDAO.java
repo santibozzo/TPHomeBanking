@@ -10,7 +10,7 @@ public interface UsuarioDAO {
 
     public void crearUsuario(Usuario u) throws DAOException;
     public void borrarUsuario(Usuario u);
-    public void modificarUsuario(Usuario u);
+    public void modificarUsuario(Usuario u) throws DAOException;
     public List<Usuario> listarUsuarios();
     public Usuario consultarUsuario(String username);
 

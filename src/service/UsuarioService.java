@@ -24,17 +24,21 @@ public class UsuarioService {
         dao.borrarUsuario(u);
     }
 
-    public void actualizarUsuario(Usuario u) {
+    public void modificarUsuario(Usuario u) throws ServicioException{
         UsuarioDAO dao = new UsuarioDaoImpl();
-        dao.modificarUsuario(u);
+        try{
+            dao.modificarUsuario(u);
+        }catch(DAOException e){
+            throw new ServicioException(e);
+        }
     }
 
-    public List<Usuario> actualizarUsuario() {
+    public List<Usuario> listarUsuarios() {
         UsuarioDAO dao = new UsuarioDaoImpl();
         return dao.listarUsuarios();
     }
 
-    public Usuario actualizarUsuario(String username) {
+    public Usuario consultarUsuario(String username) {
         UsuarioDAO dao = new UsuarioDaoImpl();
         return dao.consultarUsuario(username);
     }
