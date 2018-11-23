@@ -19,7 +19,7 @@ public class UsuarioService {
         }
     }
 
-    public void eliminarUsuario(Usuario u) {
+    public void borrarUsuario(Usuario u) {
         UsuarioDAO dao = new UsuarioDaoImpl();
         dao.borrarUsuario(u);
     }

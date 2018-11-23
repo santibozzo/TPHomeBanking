@@ -25,7 +25,6 @@ public class DBManager {
 		}
 		try {
 			String url = DB_BASE_URL + obtenerUbicacionBase();
-			System.out.println(url);
 			c = DriverManager.getConnection(url, DB_USERNAME, DB_PASSWORD);
 			c.setAutoCommit(false);
 		} catch (SQLException e) {

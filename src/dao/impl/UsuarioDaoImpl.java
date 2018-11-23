@@ -45,7 +45,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
     @Override
     public void borrarUsuario(Usuario u) {
         String username = u.getUsername();
-        String sql = "DELETE FROM usuarios WHERE user = '" + username + "'";
+        String sql = "DELETE FROM usuarios WHERE username = '" + username + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
@@ -108,7 +108,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             while (rs.next()) {
                 System.out.println("Usuario:");
                 System.out.print("\t" + rs.getInt("id"));
-                System.out.print("\t" + rs.getString("user"));
+                System.out.print("\t" + rs.getString("username"));
                 System.out.print("\t" + rs.getString("email"));
                 System.out.println();
 
@@ -131,20 +131,20 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public Usuario consultarUsuario(String username) {
-        Usuario resultado = new Usuario();
-        String sql = "SELECT * FROM usuarios WHERE user = '" + username + "'";
+        Usuario resultado = null;
+        String sql = "SELECT * FROM usuarios WHERE username = '" + username + "'";
         Connection c = DBManager.connect();
         try {
             Statement s = c.createStatement();
             ResultSet rs = s.executeQuery(sql);
 
             if (rs.next()) {
-                System.out.println("Usuario:");
-                System.out.print("\t" + rs.getInt("id"));
-                System.out.print("\t" + rs.getString("name"));
-                System.out.print("\t" + rs.getString("username"));
-                System.out.print("\t" + rs.getString("email"));
-                System.out.print("\t" + rs.getString("pass"));
+                resultado = new Usuario(
+                        rs.getString("name"),
+                        rs.getString("username"),
+                        rs.getString("pass"),
+                        rs.getString("email"));
+                System.out.println(resultado.toString());
                 System.out.println();
             }
 
