@@ -3,44 +3,54 @@ package service;
 import dao.UsuarioDAO;
 import dao.impl.UsuarioDaoImpl;
 import exceptions.DAOException;
-import exceptions.ServicioException;
+import exceptions.ServiceException;
 import modelo.Usuario;
 
 import java.util.List;
 
 public class UsuarioService {
 
-    public void crearUsuario(Usuario u) throws ServicioException {
-        UsuarioDAO dao = new UsuarioDaoImpl();
+    private UsuarioDAO usuarioDao = new UsuarioDaoImpl();
+
+    public void crearUsuario(Usuario u) throws ServiceException {
         try {
-            dao.crearUsuario(u);
+            usuarioDao.createUsuario(u);
         } catch (DAOException e) {
-            throw new ServicioException(e);
+            throw new ServiceException(e);
         }
     }
 
-    public void borrarUsuario(Usuario u) {
-        UsuarioDAO dao = new UsuarioDaoImpl();
-        dao.borrarUsuario(u);
-    }
-
-    public void modificarUsuario(Usuario u) throws ServicioException{
-        UsuarioDAO dao = new UsuarioDaoImpl();
-        try{
-            dao.modificarUsuario(u);
+    public void borrarUsuario(Usuario u) throws ServiceException {
+        try {
+            usuarioDao.deleteUsuario(u);
         }catch(DAOException e){
-            throw new ServicioException(e);
+            throw new ServiceException();
         }
     }
 
-    public List<Usuario> listarUsuarios() {
-        UsuarioDAO dao = new UsuarioDaoImpl();
-        return dao.listarUsuarios();
+    public void modificarUsuario(Usuario u) throws ServiceException {
+        try{
+            usuarioDao.modifyUsuario(u);
+        }catch(DAOException e){
+            throw new ServiceException(e);
+        }
     }
 
-    public Usuario consultarUsuario(String username) {
-        UsuarioDAO dao = new UsuarioDaoImpl();
-        return dao.consultarUsuario(username);
+    public List<Usuario> listarUsuarios() throws ServiceException {
+        try {
+            return usuarioDao.listUsuarios();
+        }catch(DAOException e){
+            throw new ServiceException();
+        }
+    }
+
+    public Usuario getUsuario(String username) throws ServiceException {
+        try {
+            Usuario usuario = usuarioDao.getUsuario(username);
+            return usuario;
+        }catch(DAOException e){
+            throw new ServiceException();
+        }
     }
 
 

@@ -1,6 +1,6 @@
 package basico.jdbc;
 
-import exceptions.ServicioException;
+import exceptions.ServiceException;
 import modelo.Usuario;
 import service.UsuarioService;
 
@@ -20,7 +20,7 @@ public class Main2 {
         try {
             UsuarioService s = new UsuarioService();
             s.crearUsuario(aInsertar);
-        } catch (ServicioException e) {
+        } catch (ServiceException e) {
             JOptionPane.showMessageDialog(null, "ERROR AL CREEAR USUARIO");
         }
     }

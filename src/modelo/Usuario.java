@@ -8,15 +8,17 @@ public class Usuario {
     private String email;
     private String username;
     private String pass;
+    private String type;
 
     public Usuario() {
     }
 
-    public Usuario(String name, String username, String pass, String email) {
+    public Usuario(String name, String username, String pass, String email, String type) {
         this.name = name;
         this.username = username;
         this.pass = pass;
         this.email = email;
+        this.type = type;
     }
 
     public String getName() {return name;}
@@ -43,6 +45,14 @@ public class Usuario {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

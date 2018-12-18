@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface UsuarioDAO {
 
-    public void crearUsuario(Usuario u) throws DAOException;
-    public void borrarUsuario(Usuario u);
-    public void modificarUsuario(Usuario u) throws DAOException;
-    public List<Usuario> listarUsuarios();
-    public Usuario consultarUsuario(String username);
+    void createUsuario(Usuario u) throws DAOException;
+    void deleteUsuario(Usuario u) throws DAOException;
+    void modifyUsuario(Usuario u) throws DAOException;
+    List<Usuario> listUsuarios() throws DAOException;
+    Usuario getUsuario(String username) throws DAOException;
 
 }

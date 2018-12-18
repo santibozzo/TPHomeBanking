@@ -8,160 +8,98 @@ import modelo.Usuario;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDaoImpl implements UsuarioDAO {
+
     @Override
-    public void crearUsuario(Usuario unUsuario) throws DAOException {
+    public void createUsuario(Usuario unUsuario) throws DAOException {
         String name = unUsuario.getName();
         String user = unUsuario.getUsername();
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
-
-        String sql = "INSERT INTO usuarios (name, username, email, pass) VALUES ('" + name + "', '" + user + "', '" + email + "', '" + pass + "')";
-        Connection c = DBManager.connect();
+        String type = unUsuario.getType();
+        String query = "INSERT INTO usuarios (name, username, email, pass, type) VALUES ('" + name + "', '" + user + "', '" + email + "', '" + pass + "', '" + type + "')";
         try {
-            Statement s = c.createStatement();
-            s.executeUpdate(sql);
-            c.commit();
+            DBManager.executeUpdate(query);
         } catch (SQLException e) {
-            try {
-                e.printStackTrace();
-                c.rollback();
-            } catch (SQLException e1) {
-                throw new DAOException(e);
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+            throw new DAOException(e);
         }
     }
 
     @Override
-    public void borrarUsuario(Usuario u) {
+    public void deleteUsuario(Usuario u) throws DAOException{
         String username = u.getUsername();
-        String sql = "DELETE FROM usuarios WHERE username = '" + username + "'";
-        Connection c = DBManager.connect();
+        String query = "DELETE FROM usuarios WHERE username = '" + username + "'";
         try {
-            Statement s = c.createStatement();
-            s.executeUpdate(sql);
-            c.commit();
+            DBManager.executeUpdate(query);
         } catch (SQLException e) {
-            try {
-                c.rollback();
-                e.printStackTrace();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
+            throw new DAOException(e);
         }
     }
 
     @Override
-    public void modificarUsuario(Usuario unUsuario) throws DAOException{
+    public void modifyUsuario(Usuario unUsuario) throws DAOException{
         String name = unUsuario.getName();
         String user = unUsuario.getUsername();
         String email = unUsuario.getEmail();
         String pass = unUsuario.getPass();
-
-        String sql = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "', name = '" + name +"' WHERE username = '" + user + "'";
-        Connection c = DBManager.connect();
+        String query = "UPDATE usuarios set email = '" + email + "', pass = '" + pass + "', name = '" + name +"' WHERE username = '" + user + "'";
         try {
-            Statement s = c.createStatement();
-            s.executeUpdate(sql);
-            c.commit();
+            DBManager.executeUpdate(query);
         } catch (SQLException e) {
-            try {
-                c.rollback();
-                e.printStackTrace();
-            } catch (SQLException e1) {
-                throw new DAOException(e);
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
+            throw new DAOException(e);
         }
     }
 
-    @Override
-    public List<Usuario> listarUsuarios() {
-        List<Usuario> lista = new ArrayList<>();
-        String sql = "SELECT * FROM usuarios";
-        Connection c = DBManager.connect();
+    private Usuario mapResultSetToModel(ResultSet result) throws SQLException{
+        Usuario usuario = null;
         try {
-            Statement s = c.createStatement();
-            ResultSet rs = s.executeQuery(sql);
-
-            while (rs.next()) {
-                System.out.println("Usuario:");
-                System.out.print("\t" + rs.getInt("id"));
-                System.out.print("\t" + rs.getString("username"));
-                System.out.print("\t" + rs.getString("email"));
-                System.out.println();
-
+            if(result.next()){
+                usuario = new Usuario(
+                        result.getString("name"),
+                        result.getString("username"),
+                        result.getString("pass"),
+                        result.getString("email"),
+                        result.getString("type")
+                );
             }
-        } catch (SQLException e) {
-            try {
-                c.rollback();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
+        }catch(SQLException e){
+            throw e;
         }
-        return lista;
+        return usuario;
     }
 
     @Override
-    public Usuario consultarUsuario(String username) {
-        Usuario resultado = null;
-        String sql = "SELECT * FROM usuarios WHERE username = '" + username + "'";
-        Connection c = DBManager.connect();
+    public List<Usuario> listUsuarios() throws DAOException{
+        String query = "SELECT * FROM usuarios";
+        Connection connection = DBManager.connect();
+        List<Usuario> usuarios = new ArrayList<>();
         try {
-            Statement s = c.createStatement();
-            ResultSet rs = s.executeQuery(sql);
-
-            if (rs.next()) {
-                resultado = new Usuario(
-                        rs.getString("name"),
-                        rs.getString("username"),
-                        rs.getString("pass"),
-                        rs.getString("email"));
-                System.out.println(resultado.toString());
-                System.out.println();
+            ResultSet result = DBManager.executeQuery(query, connection);
+            while (!result.isLast()) {
+                usuarios.add(mapResultSetToModel(result));
             }
-
+            DBManager.disconnect(connection);
         } catch (SQLException e) {
-            try {
-                c.rollback();
-                e.printStackTrace();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e1) {
-                //no hago nada
-            }
+            throw new DAOException(e);
         }
-        return resultado;
+        return usuarios;
+    }
+
+    @Override
+    public Usuario getUsuario(String username) throws DAOException{
+        String query = "SELECT * FROM usuarios WHERE username = '" + username + "'";
+        Connection connection = DBManager.connect();
+        Usuario usuario = null;
+        try {
+            ResultSet result = DBManager.executeQuery(query, connection);
+            usuario = mapResultSetToModel(result);
+            DBManager.disconnect(connection);
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return usuario;
     }
 }
