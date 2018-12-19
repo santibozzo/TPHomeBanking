@@ -6,6 +6,8 @@ import exceptions.DAOException;
 import exceptions.ServiceException;
 import modelo.Usuario;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioService {
@@ -36,12 +38,22 @@ public class UsuarioService {
         }
     }
 
-    public List<Usuario> listarUsuarios() throws ServiceException {
+    public List<Usuario> listUsuarios() throws ServiceException {
         try {
             return usuarioDao.listUsuarios();
         }catch(DAOException e){
             throw new ServiceException();
         }
+    }
+
+    public List<Usuario> listUsuarios(int offset, int size) throws ServiceException {
+        List<Usuario> usuarios = new ArrayList<>();
+        try {
+            usuarios = usuarioDao.listUsuarios();
+        }catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+        return usuarios.subList(offset < usuarios.size() ? offset : 0, offset + size < usuarios.size() ? offset + size : usuarios.size());
     }
 
     public Usuario getUsuario(String username) throws ServiceException {

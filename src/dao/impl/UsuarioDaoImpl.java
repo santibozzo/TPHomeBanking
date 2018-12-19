@@ -64,6 +64,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
                         result.getString("email"),
                         result.getString("type")
                 );
+                usuario.setId(result.getInt("id"));
             }
         }catch(SQLException e){
             throw e;

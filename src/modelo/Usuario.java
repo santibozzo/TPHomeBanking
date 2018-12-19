@@ -4,6 +4,7 @@ package modelo;
  * Created by guido on 20/05/2016.
  */
 public class Usuario {
+    private int id;
     private String name;
     private String email;
     private String username;
@@ -55,13 +56,11 @@ public class Usuario {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "name='" + name + '\'' +
-                "user='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", pass='" + pass + '\'' +
-                '}';
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

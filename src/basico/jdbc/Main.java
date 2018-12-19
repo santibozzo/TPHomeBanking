@@ -36,8 +36,11 @@ public class Main {
 //		usuarioService.crearUsuario(usuarioNuevo);
 // 		Usuario usuarioNuevo = new Usuario("roberto", "rroberto", "123456", "roberto@hotmail.com", "user");
 //		usuarioService.crearUsuario(usuarioNuevo);
-// 		usuarioNuevo = new Usuario("carlos", "ccarlos", "123456", "ccarlos@hotmail.com", "user");
-//		usuarioService.crearUsuario(usuarioNuevo);
+        Usuario usuarioNuevo = null;
+        for(int i = 0; i < 12; i++){
+ 		    usuarioNuevo = new Usuario("carlos" + i, "ccarlos" + 1, "123456", "ccarlos"+i+"@hotmail.com", "user");
+		    usuarioService.crearUsuario(usuarioNuevo);
+        }
 
 //
 //        Cuenta cuentaNueva = new Cuenta("cuenta.sbozzo", "sbozzo", 0, 10000.5f);
