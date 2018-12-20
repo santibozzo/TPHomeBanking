@@ -5,6 +5,7 @@ import pantallas.cuentaManager.CuentaManagerPantalla;
 import pantallas.cuentasList.CuentasOwnListPantalla;
 import pantallas.logIn.LogInPantalla;
 import pantallas.menues.AdminMenuPantalla;
+import pantallas.movimientoManager.MovimientoManagerPantalla;
 import pantallas.tarjetaManager.TarjetaManagerPantalla;
 import pantallas.usuarioManager.UsuarioManagerPantalla;
 import pantallas.usuariosList.UsuariosListPantalla;
@@ -31,6 +32,9 @@ public class PantallasManager {
         }else if("tarjetaManager".equals(to)){
             TarjetaManagerPantalla tarjetaManagerPantalla = new TarjetaManagerPantalla(usuario);
             tarjetaManagerPantalla.setVisible(true);
+        }else if("movimientoManager".equals(to)){
+            MovimientoManagerPantalla movimientoManagerPantalla = new MovimientoManagerPantalla(usuario);
+            movimientoManagerPantalla.setVisible(true);
         }else if("cuentasOwnList".equals(to)){
             CuentasOwnListPantalla cuentasOwnListPantalla = new CuentasOwnListPantalla(usuario);
             cuentasOwnListPantalla.setVisible(true);
