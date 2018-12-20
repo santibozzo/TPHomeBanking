@@ -1,6 +1,7 @@
 package basico.jdbc;
 
 import modelo.Usuario;
+import pantallas.cuentaManager.CuentaManagerPantalla;
 import pantallas.cuentasList.CuentasOwnListPantalla;
 import pantallas.logIn.LogInPantalla;
 import pantallas.menues.AdminMenuPantalla;
@@ -26,6 +27,9 @@ public class PantallasManager {
         }else if("usuarioManager".equals(to)){
             UsuarioManagerPantalla usuarioManagerPantalla = new UsuarioManagerPantalla(usuario);
             usuarioManagerPantalla.setVisible(true);
+        }else if("cuentaManager".equals(to)){
+            CuentaManagerPantalla cuentaManagerPantalla = new CuentaManagerPantalla(usuario);
+            cuentaManagerPantalla.setVisible(true);
         }else if("cuentasOwnList".equals(to)){
             CuentasOwnListPantalla cuentasOwnListPantalla = new CuentasOwnListPantalla(usuario);
             cuentasOwnListPantalla.setVisible(true);

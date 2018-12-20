@@ -16,12 +16,12 @@ public class pruebasPantallasTest {
 //        usuarioListPantalla.setVisible(true);
 //        usuarioListPantalla.setDefaultCloseOperation(usuarioListPantalla.EXIT_ON_CLOSE);
 
-//        LogInPantalla logInPantalla = new LogInPantalla();
-//        logInPantalla.setVisible(true);
+        LogInPantalla logInPantalla = new LogInPantalla();
+        logInPantalla.setVisible(true);
 
-        UsuarioService usuarioService = new UsuarioService();
-        Usuario usuario = usuarioService.getUsuario("sbozzo");
-        CuentasOwnListPantalla cuentasOwnListPantalla = new CuentasOwnListPantalla(usuario);
-        cuentasOwnListPantalla.setVisible(true);
+//        UsuarioService usuarioService = new UsuarioService();
+//        Usuario usuario = usuarioService.getUsuario("sbozzo");
+//        CuentasOwnListPantalla cuentasOwnListPantalla = new CuentasOwnListPantalla(usuario);
+//        cuentasOwnListPantalla.setVisible(true);
     }
 }

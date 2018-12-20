@@ -4,8 +4,13 @@ public class Cuenta {
     private int cbu = 0;
     private String alias;
     private String owner;
-    private float debit;
-    private float credit;
+    private float debit = 0f;
+    private float credit = 0f;
+
+    public Cuenta(String alias, String owner) {
+        this.alias = alias;
+        this.owner = owner;
+    }
 
     public Cuenta(String alias, String owner, float debit, float credit){
         this.alias = alias;
