@@ -1,7 +1,6 @@
 package pantallas;
 
-import pantallas.usuarioList.UsuarioListPantalla;
-import pantallas.usuarioManager.UsuarioManagerPantalla;
+import pantallas.logIn.LogInPantalla;
 
 public class pruebasPantallasTest {
 
@@ -10,8 +9,11 @@ public class pruebasPantallasTest {
 //        usuarioManagerPantalla.setVisible(true);
 //        usuarioManagerPantalla.setDefaultCloseOperation(usuarioManagerPantalla.EXIT_ON_CLOSE);
 
-        UsuarioListPantalla usuarioListPantalla = new UsuarioListPantalla();
-        usuarioListPantalla.setVisible(true);
-        usuarioListPantalla.setDefaultCloseOperation(usuarioListPantalla.EXIT_ON_CLOSE);
+//        UsuariosListPantalla usuarioListPantalla = new UsuariosListPantalla();
+//        usuarioListPantalla.setVisible(true);
+//        usuarioListPantalla.setDefaultCloseOperation(usuarioListPantalla.EXIT_ON_CLOSE);
+
+        LogInPantalla logInPantalla = new LogInPantalla();
+        logInPantalla.setVisible(true);
     }
 }

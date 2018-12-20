@@ -14,7 +14,7 @@ public class UsuarioService {
 
     private UsuarioDAO usuarioDao = new UsuarioDaoImpl();
 
-    public void crearUsuario(Usuario u) throws ServiceException {
+    public void createUsuario(Usuario u) throws ServiceException {
         try {
             usuarioDao.createUsuario(u);
         } catch (DAOException e) {
@@ -22,7 +22,7 @@ public class UsuarioService {
         }
     }
 
-    public void borrarUsuario(Usuario u) throws ServiceException {
+    public void deleteUsuario(Usuario u) throws ServiceException {
         try {
             usuarioDao.deleteUsuario(u);
         }catch(DAOException e){
@@ -30,7 +30,7 @@ public class UsuarioService {
         }
     }
 
-    public void modificarUsuario(Usuario u) throws ServiceException {
+    public void modifyUsuario(Usuario u) throws ServiceException {
         try{
             usuarioDao.modifyUsuario(u);
         }catch(DAOException e){

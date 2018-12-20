@@ -1,5 +1,6 @@
-package pantallas.usuarioList;
+package pantallas.usuariosList;
 
+import basico.jdbc.PantallasManager;
 import modelo.Usuario;
 import service.UsuarioService;
 
@@ -9,9 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class UsuarioListPantalla extends JFrame implements ActionListener {
+public class UsuariosListPantalla extends JFrame implements ActionListener {
 
-    //private UsuarioService usuarioService = new UsuarioService();
+    private Usuario usuario;
     private String[] columns = {"Id", "Nombre", "Username", "email", "Tipo"};
     private Object[][] rows;
     private int page = 0;
@@ -24,10 +25,12 @@ public class UsuarioListPantalla extends JFrame implements ActionListener {
     private JButton previousPageButton;
     private JButton backButton;
 
-    public UsuarioListPantalla() {
+    public UsuariosListPantalla(Usuario usuario) {
+        this.usuario = usuario;
         add(usuarioListPanel);
         setTitle("Listado usuarios");
         setSize(400, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         backButton.addActionListener(this);
         previousPageButton.addActionListener(this);
@@ -37,6 +40,12 @@ public class UsuarioListPantalla extends JFrame implements ActionListener {
     private void createUIComponents() {
         setRows(page, size);
         usuariosTable = new JTable(rows, columns);
+    }
+
+    private void changePage(String to) {
+        setVisible(false);
+        dispose();
+        PantallasManager.changePantalla(usuario, "usuariosList", to);
     }
 
     private Object[] usuarioToObject(Usuario usuario) {
@@ -82,6 +91,8 @@ public class UsuarioListPantalla extends JFrame implements ActionListener {
             page++;
             setRows(page * size, size);
             refreshRows();
+        }else if(source == backButton){
+            changePage("menu");
         }
     }
 }
