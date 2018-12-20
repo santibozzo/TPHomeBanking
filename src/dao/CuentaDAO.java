@@ -14,4 +14,5 @@ public interface CuentaDAO {
     Cuenta getCuenta(int cbu) throws DAOException;
     Cuenta getCuenta(String alias) throws DAOException;
     List<Cuenta> listCuentas() throws DAOException;
+    List<Cuenta> listCuentasByUsuario(String username) throws DAOException;
 }

@@ -5,6 +5,7 @@ import exceptions.DAOException;
 import exceptions.ServiceException;
 import modelo.Cuenta;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -66,5 +67,25 @@ public class CuentaService {
         }catch(DAOException e) {
             throw new ServiceException(e);
         }
+    }
+
+    public List<Cuenta> listCuentas(int offset, int size) throws ServiceException {
+        List<Cuenta> cuentas = new ArrayList<>();
+        try {
+            cuentas = cuentaDao.listCuentas();
+        }catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+        return cuentas.subList(offset < cuentas.size() ? offset : 0, offset + size < cuentas.size() ? offset + size : cuentas.size());
+    }
+
+    public List<Cuenta> listCuentasByUsuario(String username, int offset, int size) throws ServiceException {
+        List<Cuenta> cuentas = new ArrayList<>();
+        try {
+            cuentas = cuentaDao.listCuentasByUsuario(username);
+        }catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+        return cuentas.subList(offset < cuentas.size() ? offset : 0, offset + size < cuentas.size() ? offset + size : cuentas.size());
     }
 }

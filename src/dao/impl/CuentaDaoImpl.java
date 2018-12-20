@@ -124,4 +124,21 @@ public class CuentaDaoImpl implements CuentaDAO {
         }
         return cuentas;
     }
+
+    @Override
+    public List<Cuenta> listCuentasByUsuario(String username) throws DAOException {
+        String query = "SELECT * FROM cuentas WHERE owner = '"+username+"'";
+        Connection connection = DBManager.connect();
+        List<Cuenta> cuentas = new ArrayList<>();
+        try {
+            ResultSet result = DBManager.executeQuery(query, connection);
+            while(!result.isLast()){
+                cuentas.add(mapResultSetToModel(result));
+            }
+            DBManager.disconnect(connection);
+        }catch(SQLException e) {
+            throw new DAOException(e);
+        }
+        return cuentas;
+    }
 }
