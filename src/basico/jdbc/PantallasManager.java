@@ -5,6 +5,7 @@ import pantallas.cuentaManager.CuentaManagerPantalla;
 import pantallas.cuentasList.CuentasOwnListPantalla;
 import pantallas.logIn.LogInPantalla;
 import pantallas.menues.AdminMenuPantalla;
+import pantallas.menues.UserMenuPantalla;
 import pantallas.movimientoManager.MovimientoManagerPantalla;
 import pantallas.tarjetaManager.TarjetaManagerPantalla;
 import pantallas.transferencias.TransferenciaPantalla;
@@ -19,7 +20,8 @@ public class PantallasManager {
                 AdminMenuPantalla adminMenuPantalla = new AdminMenuPantalla(usuario);
                 adminMenuPantalla.setVisible(true);
             }else{
-
+                UserMenuPantalla userMenuPantalla = new UserMenuPantalla(usuario);
+                userMenuPantalla.setVisible(true);
             }
         }else if("usuariosList".equals(to)) {
             UsuariosListPantalla usuariosListPantalla = new UsuariosListPantalla(usuario);

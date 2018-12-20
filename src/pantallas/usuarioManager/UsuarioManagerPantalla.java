@@ -73,6 +73,7 @@ public class UsuarioManagerPantalla extends JFrame implements ActionListener {
             }else{
                 newUsuario = mapInputsToUsuario();
                 usuarioService.createUsuario(newUsuario);
+                System.out.println("Usuario creado.");
             }
         }else if(source == deleteUsuarioButton){
             Usuario toDeleteUsuario = usuarioService.getUsuario(usernameTextField.getText());
@@ -80,6 +81,7 @@ public class UsuarioManagerPantalla extends JFrame implements ActionListener {
                 System.out.println("Usuario no existe.");
             }else{
                 usuarioService.deleteUsuario(toDeleteUsuario);
+                System.out.println("Usuario eliminado.");
             }
         }else if(source == modifyUsuarioButton){
             Usuario modifiedUsuario = usuarioService.getUsuario(usernameTextField.getText());
@@ -95,6 +97,7 @@ public class UsuarioManagerPantalla extends JFrame implements ActionListener {
                 modifiedUsuario.setPass(passwordTextField.getText());
 
                 usuarioService.modifyUsuario(modifiedUsuario);
+                System.out.println("Usuario modificado.");
             }
         }else if(source == backButton){
             changePage("menu");

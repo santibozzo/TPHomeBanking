@@ -68,8 +68,10 @@ public class CuentasOwnListPantalla extends JFrame implements ActionListener {
         if(usuario != null){
             cuentasPage = cuentaService.listCuentasByUsuario(usuario.getUsername(), offset, size);
         }
-        for(int i = 0; i < cuentasPage.size(); i++){
-            rows[i] = cuentaToObject(cuentasPage.get(i));
+        if(cuentasPage != null){
+            for(int i = 0; i < cuentasPage.size(); i++){
+                rows[i] = cuentaToObject(cuentasPage.get(i));
+            }
         }
         this.rows = rows;
     }

@@ -14,7 +14,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
-public class Main {
+public class AbmTest {
 
 	public static void main(String [] args) {
 

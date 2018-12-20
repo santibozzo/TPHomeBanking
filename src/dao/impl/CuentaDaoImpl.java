@@ -132,7 +132,13 @@ public class CuentaDaoImpl implements CuentaDAO {
         List<Cuenta> cuentas = new ArrayList<>();
         try {
             ResultSet result = DBManager.executeQuery(query, connection);
-            while(!result.isLast()){
+            boolean isEmpty = !result.isBeforeFirst();
+            boolean firstIter = true;
+            while(!result.isLast() && !isEmpty){
+                if(firstIter){
+                    firstIter = false;
+                    result.beforeFirst();
+                }
                 cuentas.add(mapResultSetToModel(result));
             }
             DBManager.disconnect(connection);
