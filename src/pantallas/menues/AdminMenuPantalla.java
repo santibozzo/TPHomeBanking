@@ -16,6 +16,7 @@ public class AdminMenuPantalla extends JFrame implements ActionListener {
     private JButton usuarioManagerButton;
     private JButton cuentasOwnList;
     private JButton cuentaManagerButton;
+    private JButton tarjetaManagerButton;
 
     public AdminMenuPantalla(Usuario usuario) {
         this.usuario = usuario;
@@ -27,6 +28,7 @@ public class AdminMenuPantalla extends JFrame implements ActionListener {
         cuentasOwnList.addActionListener(this);
         usuarioManagerButton.addActionListener(this);
         cuentaManagerButton.addActionListener(this);
+        tarjetaManagerButton.addActionListener(this);
         usuariosListButton.addActionListener(this);
         logOutButton.addActionListener(this);
     }
@@ -46,6 +48,8 @@ public class AdminMenuPantalla extends JFrame implements ActionListener {
             changePantalla("usuarioManager");
         }else if(source == cuentaManagerButton){
             changePantalla("cuentaManager");
+        }else if(source == tarjetaManagerButton){
+            changePantalla("tarjetaManager");
         }else if(source == cuentasOwnList){
             changePantalla("cuentasOwnList");
         }else if(source == logOutButton){

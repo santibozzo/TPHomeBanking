@@ -5,13 +5,11 @@ import pantallas.cuentaManager.CuentaManagerPantalla;
 import pantallas.cuentasList.CuentasOwnListPantalla;
 import pantallas.logIn.LogInPantalla;
 import pantallas.menues.AdminMenuPantalla;
+import pantallas.tarjetaManager.TarjetaManagerPantalla;
 import pantallas.usuarioManager.UsuarioManagerPantalla;
 import pantallas.usuariosList.UsuariosListPantalla;
 
 public class PantallasManager {
-
-//    private LogInPantalla logInPantalla = new LogInPantalla();
-//    private UsuariosListPantalla usuarioListPantalla = new UsuariosListPantalla();
 
     public static void changePantalla(Usuario usuario, String from, String to) {
         if("menu".equals(to)){
@@ -30,6 +28,9 @@ public class PantallasManager {
         }else if("cuentaManager".equals(to)){
             CuentaManagerPantalla cuentaManagerPantalla = new CuentaManagerPantalla(usuario);
             cuentaManagerPantalla.setVisible(true);
+        }else if("tarjetaManager".equals(to)){
+            TarjetaManagerPantalla tarjetaManagerPantalla = new TarjetaManagerPantalla(usuario);
+            tarjetaManagerPantalla.setVisible(true);
         }else if("cuentasOwnList".equals(to)){
             CuentasOwnListPantalla cuentasOwnListPantalla = new CuentasOwnListPantalla(usuario);
             cuentasOwnListPantalla.setVisible(true);

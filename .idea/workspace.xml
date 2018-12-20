@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac26f708-f628-4421-ac46-77f8ad0e8749" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/h2/base_de_datos/uno.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/h2/base_de_datos/uno.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Cuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java" afterDir="false" />
     </list>
     <ignored path="curso8JDBC-IO.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,25 +105,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="java" value="26486" />
+          <entry key="java" value="27742" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="26486" />
+          <entry key="JAVA" value="27742" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="form" value="8" />
-          <entry key="java" value="62" />
+          <entry key="form" value="9" />
+          <entry key="java" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="GUI_DESIGNER_FORM" value="8" />
-          <entry key="JAVA" value="62" />
+          <entry key="GUI_DESIGNER_FORM" value="9" />
+          <entry key="JAVA" value="64" />
         </counts>
       </usages-collector>
     </session>
@@ -134,7 +133,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -149,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+            <state relative-caret-position="64">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+            <state relative-caret-position="98">
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,6 +175,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelo/Tarjeta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="52" column="36" lean-forward="true" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pantallas/usuariosList/UsuariosListPantalla.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1020">
@@ -185,32 +210,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pantallas/cuentaManager/CuentaManagerPantalla.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/Cuenta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pantallas/cuentaManager/CuentaManagerPantalla.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -273,10 +272,12 @@
         <option value="$PROJECT_DIR$/src/pantallas/cuentaManager/CuentaManagerPantalla.form" />
         <option value="$PROJECT_DIR$/src/modelo/Cuenta.java" />
         <option value="$PROJECT_DIR$/src/pantallas/cuentaManager/CuentaManagerPantalla.java" />
+        <option value="$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java" />
+        <option value="$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.form" />
         <option value="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.form" />
         <option value="$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.java" />
         <option value="$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java" />
-        <option value="$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java" />
+        <option value="$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.java" />
       </list>
     </option>
   </component>
@@ -433,30 +434,15 @@
               <item name="TPHomeBanking" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pantallas" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentaManager" type="462c0819:PsiDirectoryNode" />
+              <item name="tarjetaManager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TPHomeBanking" type="b2602c69:ProjectViewProjectNode" />
               <item name="TPHomeBanking" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pantallas" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentaManager" type="462c0819:PsiDirectoryNode" />
-              <item name="CuentaManagerPantalla" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="TPHomeBanking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TPHomeBanking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pantallas" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentasList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPHomeBanking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TPHomeBanking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pantallas" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentasList" type="462c0819:PsiDirectoryNode" />
-              <item name="CuentasOwnListPantalla" type="e9f4de52:FormNode" />
+              <item name="tarjetaManager" type="462c0819:PsiDirectoryNode" />
+              <item name="TarjetaManagerPantalla" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="TPHomeBanking" type="b2602c69:ProjectViewProjectNode" />
@@ -474,7 +460,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="336" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545281177552" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545283452677" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="H2" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -647,7 +633,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -658,8 +644,8 @@
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.2524377" />
-      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.39869988" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.2524377" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -738,7 +724,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java</url>
-          <line>16</line>
+          <line>14</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -762,8 +748,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/47880846/6fdf6bb4-8c92-4c4e-8021-333a78fd912a/PROYECTO.INFORMATION_SCHEMA.TABLES" />
-    <entry file="file://$PROJECT_DIR$/h2/service/0_run_server_debug.bat" />
     <entry file="file://$PROJECT_DIR$/h2/bin/h2.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -831,6 +815,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -865,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Tarjeta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/impl/TarjetaDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -886,6 +866,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,13 +1043,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Tarjeta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pantallas/menues/AdminMenuPantalla.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state relative-caret-position="98">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1075,18 +1065,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/basico/jdbc/PantallasManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        <state relative-caret-position="64">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pantallas/pruebasPantallasTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" selection-start-line="18" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pantallas/tarjetaManager/TarjetaManagerPantalla.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="52" column="36" lean-forward="true" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
